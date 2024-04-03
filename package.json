@@ -1,0 +1,15 @@
+{
+  "name": "talentotech",
+  "version": "1.0.0",
+  "description": "Desarrollo de los ejercicios propuestos talentotech -  Universidad Sergio Arboleda - Bootcamp Programacion",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d src"
+  },
+  "keywords": [],
+  "author": "Jorge Manrique georgemanc.28@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}
