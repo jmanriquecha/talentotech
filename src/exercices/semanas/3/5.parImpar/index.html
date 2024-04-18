@@ -1,0 +1,89 @@
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/main.css">
+        <title>Par o Impar</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                font-weight: normal;
+            }
+
+            body {
+                background-color: rgb(56, 75, 75);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            .container {
+                width: 80%;
+                margin: auto;
+            }
+
+            .container h1 {
+                color: #fff;
+                text-transform: uppercase;
+                text-align: center;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            .container label {
+                display: block;
+                font-size: 30px;
+                color: #ccc;
+                margin-bottom: 20px;
+            }
+
+            .container input {
+                width: 300px;
+                height: 40px;
+            }
+
+            .container button {
+                min-width: 150px;
+                width: auto;
+                height: 45px;
+                cursor: pointer;
+            }
+
+            .container #result {
+                font-size: 20px;
+                color: #ffffff;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h1>Programa que indica si un número es par o impar</h1>
+
+            <label for="numero">Introduzca un número: </label>
+            <input type="number" name="numero" id="numero">
+            <button id="btn">Comprobar</button>
+            <p id="result">...</p>
+        </div>
+        <script>
+            let btn = document.getElementById('btn');
+
+            btn.addEventListener('click', isPar);
+
+            function isPar() {
+                let msg;
+                let numero = document.getElementById('numero');
+                if ((numero.value % 2) === 0) {
+                    msg = 'El número es par';
+                } else {
+                    msg = 'El número es impar';
+                }
+
+                document.getElementById('result').innerHTML = msg;
+            }
+        </script>
+    </body>
+
+</html>

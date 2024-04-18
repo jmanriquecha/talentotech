@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 150px;
+}
+
+.col {
+    display: flex;
+    justify-content: end;
+    width: 70%;
+}
+
+label {
+    font-size: 25px;
+    color: #fff;
+    margin: 20px;
+}
+
+input,
+select,
+button {
+    width: 300px;
+    height: 40px;
+    cursor: pointer;
+}
+
+#result {
+    color: blanchedalmond;
+    margin-top: 30px;
+    font-size: 30px;
+}

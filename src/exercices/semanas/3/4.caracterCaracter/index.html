@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/main.css">
+        <title>Palidormo</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                font-weight: normal;
+            }
+
+            body {
+                background-color: rgb(56, 75, 75);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            .container {
+                width: 80%;
+                margin: auto;
+            }
+
+            .container h1 {
+                color: #fff;
+                text-transform: uppercase;
+                text-align: center;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            .container label {
+                display: block;
+                font-size: 30px;
+                color: #ccc;
+                margin-bottom: 20px;
+            }
+
+            .container input {
+                width: 300px;
+                height: 40px;
+            }
+
+            .container button {
+                min-width: 150px;
+                width: auto;
+                height: 45px;
+                cursor: pointer;
+            }
+
+            .container #result {
+                font-size: 20px;
+                color: #ffffff;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h1>Carácter a Carácter</h1>
+
+            <label for="frase">Introduzca una frase: </label>
+            <input type="text" name="frase" id="frase">
+            <button id="btn">Enviar</button>
+            <p id="result">...</p>
+        </div>
+        <script>
+            let btn = document.getElementById('btn');
+
+            btn.addEventListener('click', caracter);
+
+            function caracter() {
+                let frase = document.getElementById('frase');
+                let caracter = [];
+
+                for (let i = 0; i < frase.value.length; i++) {
+
+                    let element = (frase.value[i] === '0') ||
+                        (frase.value[i] === '1') ||
+                        (frase.value[i] === '2') ||
+                        (frase.value[i] === '3') ||
+                        (frase.value[i] === '4') ||
+                        (frase.value[i] === '5') ||
+                        (frase.value[i] === '6') ||
+                        (frase.value[i] === '7') ||
+                        (frase.value[i] === '8') ||
+                        (frase.value[i] === '9');
+
+                    if (element) {
+                        continue;
+                    }
+                    caracter += frase.value[i];
+
+                }
+
+
+
+                document.getElementById('result').innerHTML = caracter;
+
+            }
+        </script>
+    </body>
+
+</html>

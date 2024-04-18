@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/cal.css">
+        <title>Calculadora Basica</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="col">
+                <label for="option">Seleccione la operación que desea realizar</label>
+                <select name="option" id="option" class="option" required>
+                    <option value="">---</option>
+                    <option value="1">Sumar</option>
+                    <option value="2">Restar</option>
+                    <option value="3">Multiplicar</option>
+                    <option value="4">Dividir</option>
+                    <option value="5">Modulo</option>
+                    <option value="6">Salir</option>
+                </select>
+            </div>
+            <div class="col">
+
+                <label for="num1">Número 1</label>
+                <input type="number" name="num1" id="num1">
+            </div>
+            <div class="col">
+
+                <label for="num2">Número 2</label>
+                <input type="number" name="num2" id="num2">
+            </div>
+            <div class="col">
+
+                <button id="btn">Calcular</button>
+            </div>
+
+            <div id="result"></div>
+        </div>
+
+
+        <script src="./js/cal.js"></script>
+    </body>
+
+</html>

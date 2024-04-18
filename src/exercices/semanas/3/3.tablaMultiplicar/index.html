@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/main.css">
+        <title>Palidormo</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                font-weight: normal;
+            }
+
+            body {
+                background-color: rgb(56, 75, 75);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            .container {
+                width: 80%;
+                margin: auto;
+            }
+
+            .container h1 {
+                color: #fff;
+                text-transform: uppercase;
+                text-align: center;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            .container label {
+                display: block;
+                font-size: 30px;
+                color: #ccc;
+                margin-bottom: 20px;
+            }
+
+            .container input {
+                width: 300px;
+                height: 40px;
+            }
+
+            .container button {
+                min-width: 150px;
+                width: auto;
+                height: 45px;
+                cursor: pointer;
+            }
+
+            .container #result {
+                font-size: 20px;
+                color: #ffffff;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h1>Tabla de multiplicar</h1>
+
+            <label for="tabla">Por favor ingrese el número de la tabla a multiplicar: </label>
+            <input type="number" name="tabla" id="tabla">
+            <button id="btn">Calcular</button>
+            <p id="result">...</p>
+        </div>
+        <script>
+            // Declaración de variables
+
+            let tabla = document.getElementById('tabla');
+            let btn = document.getElementById('btn');
+
+            btn.addEventListener('click', multipicarTabla);
+
+            function multipicarTabla() {
+                let result = [];
+
+                for (let i = 1; i <= 10; i++) {
+                    result += [`${tabla.value} * ${i} = ${i * tabla.value} <br>`];
+                }
+
+                document.getElementById('result').innerHTML = result;
+            }
+        </script>
+    </body>
+
+</html>
