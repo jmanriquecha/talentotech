@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <style>
+            body {
+                background-color: brown;
+                text-align: center;
+                font-size: 2em;
+            }
+
+            button {
+                padding: 10px;
+            }
+
+            input {
+                height: 32px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Solicita Contraseña</h1>
+        <br>
+        <label for="pass">Contraseña</label>
+        <input type="password" name="pass" id="pass" placeholder="Ingrese la contraseña">
+        <button id="submit">Iniciar Sesión</button>
+        <br>
+        <br>
+        <div id="result"></div>
+
+        <script>
+            let pass = document.getElementById('pass');
+            let btn = document.getElementById('submit');
+
+            btn.addEventListener('click', valida);
+
+            function valida() {
+                let password = "12345";
+                let result = document.getElementById('result');
+                if (pass.value === password) {
+                    result.innerHTML = 'La contraseña es valida';
+                } else {
+                    pass.focus();
+                    pass.value = '';
+                    result.innerHTML = 'La contraseña no es valida! por favor verifique e intente nuevamente';
+                }
+            }
+
+        </script>
+    </body>
+
+</html>
