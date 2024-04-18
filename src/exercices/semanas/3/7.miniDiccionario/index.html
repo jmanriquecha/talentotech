@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mini-Diccionario de Ingles a español</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                width: 90%;
+                height: 200px;
+                margin: 20px auto;
+                text-align: center;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                background-color: rgb(232, 232, 232);
+                border: 2px solid #ccc
+            }
+
+            .container h1 {
+                margin: 20px 0;
+            }
+
+            .container #msg {
+                margin-top: 40px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Diccionario de Español a Inglés</h1>
+            <label for="palabra">Plabra a traducir</label>
+            <input type="text" name="palabra" id="palabra">
+            <button id="btn">Traducir</button>
+            <br>
+            <div id="msg"></div>
+        </div>
+    </body>
+
+    <script>
+        let trapalabrauctor = document.getElementById('palabra');
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            let msg = document.getElementById('msg');
+            msg.innerText = 'Buscando...';
+            setTimeout(() => {
+                msg.innerHTML = `<strong>${diccionario(palabra.value)}</strong>`;
+            }, 300);
+        });
+
+        function diccionario(palabra) {
+            let result;
+            let frase = palabra.toLowerCase();
+            console.log(frase);
+            switch (frase) {
+                case 'casa':
+                    result = 'house';
+                    break;
+                case 'carro':
+                    result = 'car';
+                    break;
+                case 'perro':
+                    result = 'dog';
+                    break;
+                case 'gato':
+                    result = 'cat';
+                    break;
+                case 'hola':
+                    result = 'Hello';
+                    break;
+
+                default:
+                    result = 'No pudimos encontrar un resultado';
+                    break;
+            }
+            return result.toLocaleUpperCase();
+        }
+    </script>
+
+</html>
