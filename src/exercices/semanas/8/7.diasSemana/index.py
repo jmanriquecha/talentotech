@@ -7,16 +7,19 @@ De lo contrario imprima “Avancemos que ya es”, día de la semana
 Dificultad
 Media"""
 
-dia = input('Por favor ingrese el un día de la semana: ')
-dia = dia.lower()
+dia = input('Por favor ingrese el un día de la semana: ').lower()
 
-if(dia == 'lunes') | (dia == 'sabado') | (dia == 'sábado') | (dia == 'domingo'):
-    msg = f'¡{dia.capitalize()} es un día fabuloso!'
+if dia in ['lunes', 'sabado', 'sábado', 'domingo']:
+    if(dia == 'sabado'):
+        dia = 'sábado'
+    msg = 'Hoy es un día fabuloso por que es: '
 elif dia == 'viernes':
-    msg = f'{dia.capitalize()} Ya vemos cerca el fin de semana'
-elif (dia == 'martes') | (dia == 'miércoles') | (dia == 'miercoles') | (dia == 'jueves'):
-    msg = f'Avancemos que ya es {dia.capitalize()}'
+    msg = 'Ya vemos cerca el fin de semana'
+elif dia in ['martes', 'miércoles', 'miercoles', 'jueves']:
+    if(dia == 'miercoles'):
+        dia = 'miércoles'
+    msg = 'Avancemos que ya es'
 else:
     msg = 'No has ingresado un día valido: '
    
-print(msg)
+print(f'{msg} {dia.capitalize()}')
