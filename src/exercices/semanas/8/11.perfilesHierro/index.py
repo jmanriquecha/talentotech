@@ -25,3 +25,18 @@ while True:
     else:
         print(f'Cantidad de piezas aptas son: {piezaApta}')
         break
+    
+
+# Usando for
+
+#Perfiles de hierro
+
+cantidad_piezas = int(input("Ingrese la cantidad de piezas a procesar: "))
+piezas_aptas = 0
+
+for _ in range(cantidad_piezas):
+    longitud = float(input("Ingrese la longitud de la pieza en metros: "))
+    if 1.20 <= longitud <= 1.30:
+        piezas_aptas += 1
+
+print(f"La cantidad de piezas aptas es: {piezas_aptas}")
